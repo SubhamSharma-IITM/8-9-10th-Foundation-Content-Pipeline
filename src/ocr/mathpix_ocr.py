@@ -51,8 +51,13 @@ MATHPIX_OPTIONS = {
 # Empirical cost from Ch1 Light (76 pages cost Rs 50)
 INR_PER_PAGE = 50.0 / 76.0  # ~Rs 0.66/page
 
-APP_ID = os.environ.get('MATHPIX_APP_ID', 'acadzatechnologies_344ef3_d65d3b')
-APP_KEY = os.environ.get('MATHPIX_APP_KEY', '516aa36646afa35df5899c4059dec9d2bf90d18aa92c4b9595ee4e3959936e14')
+APP_ID = os.environ.get('MATHPIX_APP_ID', '')
+APP_KEY = os.environ.get('MATHPIX_APP_KEY', '')
+if not APP_ID or not APP_KEY:
+    raise RuntimeError(
+        "MATHPIX_APP_ID and MATHPIX_APP_KEY must be set in environment "
+        "(see .env.example). Refusing to start with empty credentials."
+    )
 
 
 # ---------------------------------------------------------------------

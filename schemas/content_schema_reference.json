@@ -1,0 +1,103 @@
+{
+  "_description": "REFERENCE — Content schema per subconcept. v8: Added curriculum tagging (isNCERT, isFoundation, foundation_type).",
+  "_version": "8.0",
+  "_changes_v8": "Added isNCERT, isFoundation, foundation_type to all question/example items. Enables dual-mode: NCERT + Competitive content in same schema.",
+  "_changes_v7": "Split single VisualContent into QuestionVisualContent + SolutionVisualContent.",
+
+  "Concept: [Concept Name]": {
+    "Subconcept: [Subconcept Name]": {
+      "Summary": {
+        "Theory": "[Theory text with \\(...\\) for inline math, **bold** for key terms, numbered lists for steps]",
+        "VisualContent": {
+          "needed": false,
+          "source_image_ref": null,
+          "image_generation_needed": false,
+          "image_description": null,
+          "generation_description": null
+        }
+      },
+      "SCQs": {
+        "Question N": {
+          "scq_format": "standard | assertion_reason | statement_selection",
+          "isBackExercise": false,
+          "isInTextQuestion": false,
+          "isNCERT": true,
+          "isFoundation": false,
+          "foundation_type": null,
+          "Difficulty": "Easy | Medium | Hard",
+          "Question": "[Complete block with \\(...\\) math, options A-D]",
+          "Answer": "A | B | C | D",
+          "Solution": "[Explanation with \\(...\\) math]",
+          "QuestionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          },
+          "SolutionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          }
+        }
+      },
+      "SubjectiveTypes": {
+        "Question N": {
+          "answer_format": "descriptive | numerical | diagram",
+          "isBackExercise": false,
+          "isInTextQuestion": false,
+          "isNCERT": true,
+          "isFoundation": false,
+          "foundation_type": null,
+          "Difficulty": "Easy | Medium | Hard",
+          "Question": "[Complete block]",
+          "Answer": "[Short answer or value with units]",
+          "Solution": "[Full worked solution: Given > Formula > Substitute > Answer > Interpret]",
+          "QuestionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          },
+          "SolutionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          }
+        }
+      },
+      "Examples": {
+        "Example N": {
+          "isSolvedExample": true,
+          "isFromNCERT": false,
+          "isNCERT": true,
+          "isFoundation": false,
+          "foundation_type": null,
+          "Difficulty": "Easy | Medium | Hard",
+          "Question": "[Problem statement]",
+          "Solution": "[Step-by-step: Given > Find > Formula > Substitute > Answer > Interpret]",
+          "QuestionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          },
+          "SolutionVisualContent": {
+            "needed": false,
+            "source_image_ref": null,
+            "image_generation_needed": false,
+            "image_description": null,
+            "generation_description": null
+          }
+        }
+      }
+    }
+  }
+}

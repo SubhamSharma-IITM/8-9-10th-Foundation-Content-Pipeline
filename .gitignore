@@ -1,0 +1,117 @@
+# ============================================================
+# Secrets & credentials — NEVER commit
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+gen-lang-client-*.json
+
+# ============================================================
+# Heavy data (regenerable from source PDFs in faculty_review/)
+# ============================================================
+# 14 GB of MinerU/torch model checkpoints
+models/
+# 161K-question JSONL DB + foundation/ncert/reference dumps
+data/
+# Source NCERT/Foundation PDFs (binaries)
+ncert_raw/
+# Faculty review source PDFs (binaries, large)
+faculty_review/
+
+# ============================================================
+# Generated pipeline outputs (regenerable by running pipeline)
+# ============================================================
+# Per-chapter pipeline artifacts. Keep notes + cost log, exclude bulk.
+experiments/*/
+!experiments/_cost_log.jsonl
+!experiments/experiment_log.md
+!experiments/research_findings.md
+!experiments/research_transformer_architecture.md
+
+# Generated review HTML output
+review/output/
+review/cache/
+output/
+
+# ============================================================
+# Vendored reference (has its own .git history)
+# ============================================================
+acadza-history-demo/
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================================
+# Test & dev tooling
+# ============================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# ============================================================
+# Virtualenvs
+# ============================================================
+.venv/
+venv/
+env/
+ENV/
+
+# ============================================================
+# Editor & OS
+# ============================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Claude Code local
+# ============================================================
+.claude/
+*.local.json
+
+# ============================================================
+# Large binaries that shouldn't be in git
+# ============================================================
+*.pdf
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.h5
+
+# Allow specific small reference PDFs IF placed in docs/ later
+!docs/**/*.pdf
